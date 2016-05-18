@@ -7,7 +7,12 @@ public class Main {
 
     public static void main(String[] args) throws BrokenBarrierException, InterruptedException {
         System.out.println("Hello World!");
-        int player_number = 3;
+	if(args.length==0) {
+		System.err.println("Input parameters! use $java Main [player_number]\n ex) java Main 7");
+		System.exit(1);
+	}
+
+        int player_number = Integer.parseInt(args[0]);
 
         Horse[] horses;
         Thread[] threads;
@@ -55,7 +60,11 @@ public class Main {
                 for(int i=0;i<progress;i++) {
                     System.out.print("=");
                 }
-                System.out.println(">");
+                System.out.print(">");
+		for(int i=0;i<78-progress;i++) {
+                	System.out.print(" ");
+		}	
+                System.out.println("|");
             }
 
 
@@ -64,6 +73,8 @@ public class Main {
 
         countDownLatch.await();
 
-        queue.stream().forEach(System.out::print);
+	for(int i=0;!queue.isEmpty();i++) {
+		System.out.println((i+1)+"등: "+queue.poll());
+	}
     }
 }
