@@ -10,5 +10,8 @@
 ## How to run
 ```
 $java Main [player_number]
+```
+ * example
+```
 $java Main 7
 ```
