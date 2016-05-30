@@ -6,7 +6,6 @@ import java.util.concurrent.*;
 public class Main {
 
     public static void main(String[] args) throws BrokenBarrierException, InterruptedException {
-        System.out.println("Hello World!");
 	if(args.length==0) {
 		System.err.println("Input parameters! use $java Main [player_number]\n ex) java Main 7");
 		System.exit(1);
