@@ -74,7 +74,7 @@ public class Main {
         countDownLatch.await();
 
 	for(int i=0;!queue.isEmpty();i++) {
-		System.out.println((i+1)+"등: "+queue.poll());
+		System.out.println((i+1)+"place: "+queue.poll());
 	}
     }
 }
